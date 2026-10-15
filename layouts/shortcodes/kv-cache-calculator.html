@@ -50,9 +50,9 @@
         <span data-kv-inline-help="Adds model-specific linear-attention recurrent and convolution state. The checkpoint policy controls how many retained states are counted.">Include linear-attention state</span>
       </label>
 
-      <label data-kv-recurrent-state-precision-control hidden>
-        <span data-kv-inline-help="Sets the precision of the recurrent state of linear-attention layers (Qwen Gated DeltaNet, Kimi KDA). Engines set it with SGLang --mamba-ssm-dtype (bf16 is required for FlashInfer GDN decode on SM100+) or vLLM --mamba-ssm-cache-dtype. The short-convolution history stays BF16 / FP16.">Recurrent state precision</span>
-        <select data-kv-input="recurrentStatePrecision"></select>
+      <label for="kv-recurrent-state-precision" data-kv-recurrent-state-precision-control hidden>
+        <span data-kv-inline-help="Controls recurrent-state storage precision. Convolution state remains BF16 / FP16.">Recurrent state precision</span>
+        <select id="kv-recurrent-state-precision" data-kv-input="recurrentStatePrecision"></select>
       </label>
 
       <label class="kv-checkbox-row" data-kv-sconv-state-control hidden>
